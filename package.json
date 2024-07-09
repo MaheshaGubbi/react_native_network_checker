@@ -1,0 +1,30 @@
+{
+  "name": "react-native-internet-checker",
+  "version": "1.0.0",
+  "description": "The react-native-internet-checker package is a useful utility for checking internet connectivity within React Native applications. It simplifies the process of monitoring network status changes and providing real-time feedback to users.",
+  "main": "index.tsx",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "native",
+    "internet",
+    "checker",
+    "connectivity",
+    "network",
+    "monitoring",
+    "status",
+    "real-time"
+  ],
+  "author": "Mahesh Gubbi",
+  "license": "ISC",
+  "peerDependencies": {
+    "axios": "^1.7.2",
+    "react": "18.2.0",
+    "react-native-paper": "^5.12.3"
+  },
+  "dependencies": {
+    "user": "^0.0.0"
+  }
+}
