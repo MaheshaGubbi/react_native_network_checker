@@ -1,23 +1,27 @@
-import React from 'react';
-import { View, Button, ToastAndroid } from 'react-native';
-import { CheckInternetStatus, ShowInternetStatus } from 'react-native-internet-checker';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import React from "react";
+import { View, Button, ToastAndroid } from "react-native";
+// import { CheckInternetStatus, ShowInternetStatus } from 'react-native-internet-checker';
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import {
+  CheckInternetStatus,
+  ShowInternetStatus,
+} from "./components/constant/SnackbarComponent";
 
 const App = () => {
-  
   const handleButton1Press = async () => {
     const isConnected = await CheckInternetStatus();
     if (isConnected) {
-      ToastAndroid.show('Connected to the internet', ToastAndroid.SHORT);
+      ToastAndroid.show("Connected to the internet", ToastAndroid.SHORT);
     } else {
-      ToastAndroid.show('No internet connection', ToastAndroid.SHORT);
+      ToastAndroid.show("No internet connection", ToastAndroid.SHORT);
     }
   };
 
   return (
     <SafeAreaProvider>
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <ShowInternetStatus />
+      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+        {/* <ShowInternetStatus /> */}
+        <ShowInternetStatus StatusMessage="No internet connection" />
 
         <View style={{ marginTop: 20 }}>
           <Button title="Check Internet" onPress={handleButton1Press} />
@@ -28,5 +32,3 @@ const App = () => {
 };
 
 export default App;
-
-

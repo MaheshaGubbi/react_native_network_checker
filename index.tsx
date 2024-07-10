@@ -12,7 +12,11 @@ const CheckInternetStatus = async (): Promise<boolean> => {
   }
 };
 
-const ShowInternetStatus: React.FC = () => {
+interface ShowInternetStatusProps {
+  StatusMessage?: string;
+}
+
+const ShowInternetStatus: React.FC<ShowInternetStatusProps> = ({ StatusMessage }) => {
   const [visible, setVisible] = useState(false); // State to manage Snackbar visibility
   const [isConnected, setIsConnected] = useState(true); // State to manage internet connectivity status
   const [retrying, setRetrying] = useState(false); // State to track retrying status
@@ -67,7 +71,7 @@ const ShowInternetStatus: React.FC = () => {
         onPress: handleRetry,
       }}
     >
-      {isConnected ? 'Connected to the internet' : 'No internet connection'}
+      {isConnected ? 'Connected to the internet' : StatusMessage || 'No internet connection'}
     </Snackbar>
   );
 };
